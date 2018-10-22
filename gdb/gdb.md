@@ -12,8 +12,8 @@ $ gdb program core
 (gdb)
 ```
 
-- topfuncs.py，分析`thread apply all bt`的输出（没有full参数，加了会比较慢），统计各线程调用堆栈的最后一个函数
-- 通过上面这个输出，可以得出，有可能是recvfrom和__lll_lock_wait之间存在死锁，程序被健康检查程序杀死而生成了core
+- [topfuncs.py](topfuncs.py)，分析`thread apply all bt`的输出（没有full参数，加了会比较慢），统计各线程调用堆栈的最后一个函数
+- 通过上面这个输出，可以得出，有可能是recvfrom和__lll_lock_wait之间存在死锁，program被健康检查程序杀死而生成了core
 - 可将`source ~/bin/topfuncs.py`放到~/.gdbinit文件中，让gdb启动时自动加载
 - [Extending GDB using Python](https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html)，官方最新版本的gdb的python扩展说明文档，比较新，CentOS 6.5环境与其有一些出入
 

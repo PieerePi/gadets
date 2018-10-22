@@ -18,7 +18,7 @@ Done! Totally 0 issues added!
 
 ```
 
-抓取的结果存放在文件lottery.json中。
+- [getlottery.py](getlottery.py)，将抓取的结果存放在文件lottery.json中
 
 ### 运行环境要求
 

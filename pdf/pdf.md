@@ -14,7 +14,7 @@ Press any key to continue...
 
 ```
 
-- 将所有的PDF文件，放在和combine.py同一目录，并按要合并的先后顺序，重命名为01.pdf、02.pdf之类的文件名
+- 将所有的PDF文件，和[combine.py](combine.py)放在同一目录，并按要合并的先后顺序，重命名为01.pdf、02.pdf之类的文件名
 
 ### 运行环境要求
 
