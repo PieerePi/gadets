@@ -1,8 +1,6 @@
-## gdb
+## 使用python扩展gdb
 
-### 使用python扩展gdb
-
-#### 用法
+### 用法
 
 ```
 $ gdb program core
@@ -17,15 +15,15 @@ $ gdb program core
 - 可将`source ~/bin/topfuncs.py`放到~/.gdbinit文件中，让gdb启动时自动加载
 - [Extending GDB using Python](https://sourceware.org/gdb/current/onlinedocs/gdb/Python.html)，官方最新版本的gdb的python扩展说明文档，比较新，CentOS 6.5环境与其有一些出入
 
-#### 运行环境
+### 运行环境
 
 - CentOS 6.5
   - Python 2.6.6 (r266:84292, Jan 22 2014, 09:42:36)
   - [GCC 4.4.7 20120313 (Red Hat 4.4.7-4)] on linux2
 
-### 非扩展的另一个版本
+## 非扩展的另一个版本
 
-#### 用法
+### 用法
 
 ```
 $ python ~/bin/topfuncs-1.py
