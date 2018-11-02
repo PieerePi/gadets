@@ -33,12 +33,10 @@ def printTopFuncs(lines, args):
                 if len(words) >= 4:
                     if words[3] in topfuncs:
                         topfuncs[words[3]] += 1
-                        if words[3] == searchfunc:
-                            funcids.append(threadid)
                     else:
                         topfuncs[words[3]] = 1
-                        if words[3] == searchfunc:
-                            funcids.append(threadid)
+                    if words[3] == searchfunc:
+                        funcids.append(threadid)
             elif line.find("#") != 0:
                 gotathreadblock = False
     if len(argv) == 0:
