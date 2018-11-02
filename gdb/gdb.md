@@ -11,7 +11,7 @@ $ gdb program core
 ['26']
 (gdb) t 26 
 [Switching to thread 26 (Thread 0x7fb49f5ce700 (LWP 18054))]#0  0x000000327cae9723 in recvfrom () from /lib64/libc.so.6
-(gdb) bt
+(gdb) bt full
 ...
 ```
 
