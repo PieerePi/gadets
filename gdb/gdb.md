@@ -7,7 +7,12 @@ $ gdb program core
 (gdb) source ~/bin/topfuncs.py
 (gdb) topfuncs
 {'nanosleep': 28, 'accept': 2, 'recvfrom': 1, '__lll_lock_wait': 32, 'poll': 160, 'epoll_wait': 9, 'select': 2}
-(gdb)
+(gdb) topfuncs recvfrom
+['26']
+(gdb) t 26 
+[Switching to thread 26 (Thread 0x7fb49f5ce700 (LWP 18054))]#0  0x000000327cae9723 in recvfrom () from /lib64/libc.so.6
+(gdb) bt
+...
 ```
 
 - [topfuncs.py](topfuncs.py)，分析`thread apply all bt`的输出（没有full参数，加了会比较慢），统计各线程调用堆栈的最后一个函数
