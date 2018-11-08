@@ -1,4 +1,4 @@
-## [mzitu网站](http://www.mzitu.com/)图片下载器
+## mzitu网站图片下载器
 
 ### 用法
 
