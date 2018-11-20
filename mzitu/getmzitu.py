@@ -97,7 +97,7 @@ def download_onemm(mmhome_url): #下载一个图集
         else:
             new_img_url = first_img_url[:-6] + '{0:02d}'.format(k) + first_img_url[-4:]
         #print(new_img_url)
-        if new_img_url and new_img_url.startswith('http://'):
+        if new_img_url and (new_img_url.startswith('http://') or new_img_url.startswith('https://')):
             ret = save_img(new_img_url, k, 'images/' + mm_dir_name)
             if ret != 200:
                 print(new_img_url + " of '" + mm_dir_name + "' " + str(k) +"_th 无法下载,新,返回码" + str(ret))
@@ -113,7 +113,7 @@ def download_onemm(mmhome_url): #下载一个图集
             continue
         new_img_url = get_img_url(mmhome_url + "/" + str(i))
         #print(new_img_url)
-        if new_img_url and new_img_url.startswith('http://'):
+        if new_img_url and (new_img_url.startswith('http://') or new_img_url.startswith('https://')):
             ret = save_img(new_img_url, i, 'images/' + mm_dir_name)
             if ret != 200:
                 print(new_img_url + " of '" + mm_dir_name + "' " + str(i) +"_th 无法下载,旧,返回码" + str(ret))
