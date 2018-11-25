@@ -4,13 +4,16 @@
 from __future__ import print_function
 import gdb
 
+
 class TopFuncs(gdb.Command):
     def __init__(self):
-        super(self.__class__, self).__init__("topfuncs", gdb.COMMAND_SUPPORT, gdb.COMPLETE_NONE, True)
+        super(self.__class__, self).__init__("topfuncs",
+                                             gdb.COMMAND_SUPPORT, gdb.COMPLETE_NONE, True)
 
     def invoke(self, args, from_tty):
         lines = gdb.execute("thread apply all bt", to_string=True).splitlines()
         printTopFuncs(lines, args)
+
 
 def printTopFuncs(lines, args):
     topfuncs = {}
@@ -43,5 +46,6 @@ def printTopFuncs(lines, args):
         print(topfuncs)
     else:
         print(funcids)
+
 
 TopFuncs()

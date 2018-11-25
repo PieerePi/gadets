@@ -4,6 +4,7 @@
 from __future__ import print_function
 import sys
 
+
 def main():
     topfuncs = {}
     gotathreadblock = False
@@ -29,6 +30,7 @@ def main():
             elif line.find("#") != 0:
                 gotathreadblock = False
     print(topfuncs)
+
 
 if __name__ == "__main__":
     main()
