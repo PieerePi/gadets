@@ -11,12 +11,12 @@ import io
 
 Hostreferer = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
-    'Referer': 'http://www.mzitu.com'
+    'Referer': 'https://www.mzitu.com'
 }
 
 Picreferer = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36',
-    'Referer': 'http://i.meizitu.net'
+    'Referer': 'https://i.meizitu.net'
 }
 
 continued_transfer = 0  # 图集已经存在并下载完成，后续图集仍继续下载；当程序非正常退出时，需要加上此选项
@@ -138,10 +138,10 @@ def download_onemm(mmhome_url):  # 下载一个图集
 
 
 def download():
-    html = get_html("http://www.mzitu.com/")
+    html = get_html("https://www.mzitu.com/")
     soup = BeautifulSoup(html, 'lxml')
     all_pages = int(
-        (soup.find_all("a", attrs={"class": "page-numbers"}))[3].contents[1])  # 获取总概览页面数
+        (soup.find_all("a", attrs={"class": "page-numbers"}))[3].contents[0])  # 获取总概览页面数
     page_range = range(1, all_pages+1, 1)
     if reversed_transfer == 1:
         page_range = range(all_pages, 0, -1)
@@ -152,7 +152,7 @@ def download():
         pass
 
     for which in page_range:
-        html = get_html("http://www.mzitu.com/page/" + str(which) + "/")
+        html = get_html("https://www.mzitu.com/page/" + str(which) + "/")
         soup = BeautifulSoup(html, 'lxml')
         div = soup.find_all("div", attrs={"class": "postlist"})
         href = div[0].find_all("a", attrs={"target": "_blank"})
