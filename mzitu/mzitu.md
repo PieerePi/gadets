@@ -20,12 +20,13 @@
 
 - python 3
 - 安装了requests和BeautifulSoup
+- 词云还需要jeiba、wordcloud和matplotlib
 
 ### 打包成exe独立运行
 
 - 安装了pyinstaller
 - 运行winpack.bat，生成可执行文件getmzitu.exe
 
-### TODO
+### [图集描述词云图](wordcloud.py)
 
-- 对图集名称进行分析，生成一个词云图
+![MZITU网站图集描述词云词](wordcloud.png)
