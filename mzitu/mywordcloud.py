@@ -27,7 +27,7 @@ def getAllWords():
     alltext = ""
     html = get_html("https://www.mzitu.com/")
     soup = BeautifulSoup(html, 'lxml')
-    #print(soup.find_all("a", attrs={"class": "page-numbers"}))
+    # print(soup.find_all("a", attrs={"class": "page-numbers"}))
     all_pages = int(
         (soup.find_all("a", attrs={"class": "page-numbers"}))[3].contents[0])  # 获取总概览页面数
     page_range = range(1, all_pages + 1, 1)
@@ -42,8 +42,8 @@ def getAllWords():
             if i % 2 == 0:
                 continue
             alltext = alltext + " " + href[i].text
-        time.sleep(1)
-        #print("第" + which + "页")
+        # time.sleep(1)
+        # print("第" + str(which) + "页")
 
     # returned is a generator
     return jieba.cut(alltext)
